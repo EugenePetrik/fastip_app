@@ -10,6 +10,7 @@ public class MainPage extends BasePage {
         initializePage();
     }
 
+    @Override
     public MainPage initializePage() {
         return this;
     }
@@ -46,5 +47,11 @@ public class MainPage extends BasePage {
         String tip = totalAmount.getText();
 
         return tip.equals(value);
+    }
+
+    public SettingPage clickToSettings() {
+        settings.click();
+
+        return new SettingPage(driver);
     }
 }
