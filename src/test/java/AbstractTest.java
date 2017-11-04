@@ -47,8 +47,8 @@ public class AbstractTest {
 
             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
-            desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6 Simulator");
-            desiredCapabilities.setCapability(MobileCapabilityType.UDID, "F678F40D-B14D-4252-B1AD-1997CBB7DF11");
+            desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 7 Simulator");
+            desiredCapabilities.setCapability(MobileCapabilityType.UDID, "FB8CCF47-7FF6-45FB-BE88-F3B260FFDF23");
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");
             desiredCapabilities.setCapability(MobileCapabilityType.APP, app);
             desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
