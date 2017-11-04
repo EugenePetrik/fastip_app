@@ -32,7 +32,7 @@ public class AbstractTest {
         if (platformVal != null) {
             platform = platformVal.contains("ios") ? IOS : ANDROID;
         } else {
-            platform = IOS;
+            platform = ANDROID;
         }
     }
 

@@ -1,7 +1,10 @@
+import enums.Platform;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.MainPage;
 import pageobjects.SettingPage;
+
+import static pageobjects.BasePage.platform;
 
 public class TestScenarios extends AbstractTest {
     @Test(description = "Getting amount with default tip percentage")
@@ -30,7 +33,12 @@ public class TestScenarios extends AbstractTest {
                 .clickToSettings()
                 .saveCustomTipPercentage("");
 
-        Assert.assertEquals(new SettingPage(driver)
-                .errorMessageIncorrectTipPercentage(), "Percentage must be a decimal value");
+        SettingPage emptyTip = new SettingPage(driver);
+
+        if (platform.equals(Platform.IOS)) {
+            Assert.assertEquals(emptyTip.errorIncorrectTipPercentage(), "Percentage must be a decimal value");
+        } else if (platform.equals(Platform.ANDROID)) {
+            Assert.assertEquals(emptyTip.errorIncorrectTipPercentage(), "A decimal value is required");
+        }
     }
 }
